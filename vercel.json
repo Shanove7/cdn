@@ -6,7 +6,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "https://xolsdbn8nox3muqq.public.blob.vercel-storage.com/$1"
+      "dest": "https://xOlSdbn8NoX3MuQq.public.blob.vercel-storage.com/$1"
     }
   ]
 }

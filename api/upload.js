@@ -53,7 +53,7 @@ export default async function handler(req, res){
       )
 
       const url =
-        `https://cdn.khasan.biz.id/${blob.pathname}`
+        `https://cdn.snx.biz.id/${blob.pathname}`
 
       return res.json({
         status: true,

@@ -5,10 +5,12 @@ export default async function handler(req, res){
   const data = await list()
 
   const files = data.blobs.map(v=>({
-    url: v.url,
+
+    url: `https://cdn.khasan.biz.id/${v.pathname}`,
+    pathname: v.pathname,
     size: v.size,
-    uploaded: v.uploadedAt,
-    pathname: v.pathname
+    uploaded: v.uploadedAt
+
   }))
 
   return res.json({

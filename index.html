@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Khasan CDN</title>
+<style>
+
+body{
+background:#0f172a;
+color:#fff;
+font-family:sans-serif;
+padding:20px
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px
+}
+
+.file{
+margin:5px 0;
+padding:5px;
+background:#334155;
+border-radius:5px
+}
+
+a{
+color:#38bdf8;
+text-decoration:none
+}
+
+</style>
+</head>
+<body>
+
+<h2>Khasan CDN Storage</h2>
+
+<div class="card">
+Total Files: <span id="total">loading...</span>
+</div>
+
+<br>
+
+<div class="card">
+<div id="list"></div>
+</div>
+
+<script>
+
+async function load(){
+
+const res = await fetch('/api/list')
+const data = await res.json()
+
+document.getElementById('total').innerText = data.total
+
+let html = ''
+
+data.files.reverse().forEach(v=>{
+
+html += `
+<div class="file">
+<a href="${v.url}" target="_blank">
+${v.pathname}
+</a>
+</div>
+`
+
+})
+
+document.getElementById('list').innerHTML = html
+
+}
+
+load()
+
+</script>
+
+</body>
+</html>

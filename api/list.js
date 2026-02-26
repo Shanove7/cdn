@@ -6,7 +6,7 @@ export default async function handler(req, res){
 
   const files = data.blobs.map(v=>({
 
-    url: `https://cdn.khasan.biz.id/${v.pathname}`,
+    url: `https://cdn.snx.biz.id/${v.pathname}`,
     pathname: v.pathname,
     size: v.size,
     uploaded: v.uploadedAt
